@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ChatController"
+            styleClass="root-pane">
+
+    <!-- ═══════════════ LEFT SIDEBAR ═══════════════ -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="260">
+
+            <!-- App header -->
+            <HBox styleClass="sidebar-header" alignment="CENTER_LEFT" spacing="10">
+                <Label text="💬" style="-fx-font-size:22;"/>
+                <VBox>
+                    <Label text="Chat Engine" styleClass="app-title"/>
+                    <Label fx:id="loggedInLabel" text="alice" styleClass="logged-in-name"/>
+                </VBox>
+            </HBox>
+
+            <!-- Search -->
+            <HBox styleClass="search-box" alignment="CENTER_LEFT">
+                <Label text="🔍 " styleClass="search-icon"/>
+                <TextField fx:id="searchField" promptText="Search..." styleClass="search-field"
+                           HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- Tab strip -->
+            <HBox styleClass="tab-strip">
+                <Button fx:id="tabUsers"  text="Users"  styleClass="tab-btn,tab-active"
+                        onAction="#showUsers"  HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button fx:id="tabGroups" text="Groups" styleClass="tab-btn"
+                        onAction="#showGroups" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </HBox>
+
+            <!-- Contact / Group list -->
+            <ListView fx:id="contactList" styleClass="contact-list" VBox.vgrow="ALWAYS"
+                      onMouseClicked="#onContactSelected"/>
+
+            <!-- Status bar -->
+            <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="6">
+                <Label text="●" styleClass="status-dot-online"/>
+                <Label fx:id="statusLabel" text="Online" styleClass="status-text"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <!-- ═══════════════ MAIN CHAT AREA ═══════════════ -->
+    <center>
+        <VBox styleClass="chat-pane">
+
+            <!-- Chat header -->
+            <HBox fx:id="chatHeader" styleClass="chat-header" alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="chatAvatar"  text="A"  styleClass="avatar-circle"/>
+                <VBox>
+                    <Label fx:id="chatTitle"    text="Select a chat" styleClass="chat-title"/>
+                    <Label fx:id="chatSubtitle" text=""              styleClass="chat-subtitle"/>
+                </VBox>
+            </HBox>
+
+            <!-- Messages scroll area -->
+            <ScrollPane fx:id="scrollPane" styleClass="msg-scroll" VBox.vgrow="ALWAYS"
+                        fitToWidth="true" hbarPolicy="NEVER">
+                <VBox fx:id="messageBox" styleClass="message-box" spacing="8">
+                    <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Input bar -->
+            <HBox styleClass="input-bar" alignment="CENTER" spacing="10">
+                <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
+                <TextField fx:id="inputField" promptText="Type a message…"
+                           styleClass="msg-input" HBox.hgrow="ALWAYS"
+                           onAction="#sendMessage"/>
+                <Button text="Send ➤" styleClass="send-btn" onAction="#sendMessage"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- ═══════════════ RIGHT PANEL ═══════════════ -->
+    <right>
+        <VBox fx:id="rightPanel" styleClass="right-panel" prefWidth="220">
+
+            <Label text="Info" styleClass="right-panel-title"/>
+
+            <Label fx:id="infoName"   text="—" styleClass="info-name"/>
+            <Label fx:id="infoID"     text="—" styleClass="info-field"/>
+            <Label fx:id="infoStatus" text="—" styleClass="info-field"/>
+            <Label fx:id="infoExtra"  text="—" styleClass="info-field" wrapText="true"/>
+
+            <Separator styleClass="divider"/>
+            <Label text="Members / Groups" styleClass="right-panel-subtitle"/>
+
+            <ListView fx:id="infoList" styleClass="info-list" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </right>
+
+</BorderPane>

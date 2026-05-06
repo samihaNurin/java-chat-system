@@ -1,0 +1,228 @@
+/* ═══════════════════════════════════════════════
+   Chat Engine — Dark Theme CSS
+   ═══════════════════════════════════════════════ */
+
+* { -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+
+/* Root */
+.root-pane { -fx-background-color: #0f0f13; }
+
+/* ── SIDEBAR ─────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #16161e;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-header {
+    -fx-background-color: #1a1a24;
+    -fx-padding: 16 14 16 14;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.app-title {
+    -fx-text-fill: #e8e8ff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.logged-in-name {
+    -fx-text-fill: #7c7caa;
+    -fx-font-size: 11px;
+}
+
+/* Search */
+.search-box {
+    -fx-background-color: #1a1a24;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.search-icon { -fx-text-fill: #555575; -fx-font-size: 13px; }
+
+.search-field {
+    -fx-background-color: #22223a;
+    -fx-text-fill: #d0d0f0;
+    -fx-prompt-text-fill: #555575;
+    -fx-border-color: #333355;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12;
+    -fx-font-size: 12px;
+}
+.search-field:focused {
+    -fx-border-color: #6c63ff;
+}
+
+/* Tab strip */
+.tab-strip {
+    -fx-background-color: #1a1a24;
+    -fx-padding: 6 10 6 10;
+    -fx-spacing: 6;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.tab-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7c7caa;
+    -fx-font-size: 12px;
+    -fx-padding: 6 0;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6;
+}
+.tab-btn:hover { -fx-background-color: #22223a; -fx-text-fill: #c0c0f0; }
+.tab-active    { -fx-text-fill: #a89bff !important; -fx-border-color: #6c63ff;
+                 -fx-border-width: 0 0 2 0; }
+
+/* Contact list */
+.contact-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4 0;
+}
+.contact-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c8c8e8;
+    -fx-font-size: 13px;
+    -fx-padding: 10 14;
+}
+.contact-list .list-cell:hover    { -fx-background-color: #22223a; }
+.contact-list .list-cell:selected { -fx-background-color: #2a2a50; -fx-text-fill: #ffffff; }
+
+/* Status bar */
+.status-bar {
+    -fx-background-color: #1a1a24;
+    -fx-padding: 8 14;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 1 0 0 0;
+}
+.status-dot-online { -fx-text-fill: #4caf88; -fx-font-size: 10px; }
+.status-text       { -fx-text-fill: #7c7caa; -fx-font-size: 11px; }
+
+/* ── CHAT PANE ───────────────────────────────── */
+.chat-pane { -fx-background-color: #0f0f13; }
+
+.chat-header {
+    -fx-background-color: #16161e;
+    -fx-padding: 14 18;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.avatar-circle {
+    -fx-min-width: 42; -fx-min-height: 42;
+    -fx-max-width: 42; -fx-max-height: 42;
+    -fx-background-color: #6c63ff;
+    -fx-background-radius: 50;
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.chat-title    { -fx-text-fill: #e8e8ff; -fx-font-size: 15px; -fx-font-weight: bold; }
+.chat-subtitle { -fx-text-fill: #7c7caa; -fx-font-size: 11px; }
+
+/* Messages */
+.msg-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+.msg-scroll .viewport { -fx-background-color: transparent; }
+.msg-scroll .scroll-bar:vertical .track   { -fx-background-color: #1a1a24; }
+.msg-scroll .scroll-bar:vertical .thumb   { -fx-background-color: #333355; -fx-background-radius: 4; }
+
+.message-box { -fx-background-color: transparent; }
+
+/* Bubbles */
+.bubble-mine {
+    -fx-background-color: #4a3fcc;
+    -fx-background-radius: 18 18 4 18;
+    -fx-padding: 9 14;
+}
+.bubble-other {
+    -fx-background-color: #22223a;
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 9 14;
+}
+.bubble-text { -fx-fill: #eeeeff; -fx-font-size: 13px; }
+.bubble-time { -fx-fill: #8888aa; -fx-font-size: 10px; }
+.sender-label { -fx-text-fill: #a89bff; -fx-font-size: 10px; -fx-padding: 0 4; }
+
+/* Input bar */
+.input-bar {
+    -fx-background-color: #16161e;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 1 0 0 0;
+}
+
+.msg-input {
+    -fx-background-color: #22223a;
+    -fx-text-fill: #e8e8ff;
+    -fx-prompt-text-fill: #555575;
+    -fx-border-color: #333355;
+    -fx-border-radius: 22;
+    -fx-background-radius: 22;
+    -fx-padding: 10 16;
+    -fx-font-size: 13px;
+}
+.msg-input:focused { -fx-border-color: #6c63ff; }
+
+.send-btn {
+    -fx-background-color: #6c63ff;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 22;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+.send-btn:hover   { -fx-background-color: #7c70ff; }
+.send-btn:pressed { -fx-background-color: #5a52cc; }
+
+/* ── RIGHT PANEL ─────────────────────────────── */
+.right-panel {
+    -fx-background-color: #16161e;
+    -fx-border-color: #2a2a3a;
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 18 14;
+    -fx-spacing: 6;
+}
+
+.right-panel-title {
+    -fx-text-fill: #a89bff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 8 0;
+}
+
+.right-panel-subtitle {
+    -fx-text-fill: #7c7caa;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 0 4 0;
+}
+
+.info-name  { -fx-text-fill: #e8e8ff; -fx-font-size: 14px; -fx-font-weight: bold; }
+.info-field { -fx-text-fill: #9090b8; -fx-font-size: 12px; }
+
+.divider { -fx-background-color: #2a2a3a; -fx-padding: 6 0; }
+
+.info-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.info-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b0b0d0;
+    -fx-font-size: 12px;
+    -fx-padding: 5 4;
+}
+.info-list .list-cell:hover    { -fx-background-color: #22223a; }
+.info-list .list-cell:selected { -fx-background-color: #2a2a50; }
